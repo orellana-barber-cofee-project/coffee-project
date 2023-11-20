@@ -5,30 +5,33 @@ function renderCoffee(coffee) {
     coffeeDiv.classList.add('col-6', 'col-md-4', 'coffee');
 
     // Apply styles based on roast type
-    switch (coffee.roast) {
+    switch (coffee.roast.toLowerCase()) {
         case 'light':
-            coffeeDiv.style.backgroundColor = '#ece0d1';
-            break;
-        case 'medium':
             coffeeDiv.style.backgroundColor = '#dbc1ac';
             break;
-        case 'dark':
+        case 'medium':
             coffeeDiv.style.backgroundColor = '#967259';
             break;
+        case 'dark':
+            coffeeDiv.style.backgroundColor = '#634832';
+            break;
         default:
-            coffeeDiv.style.backgroundColor = '#ece0d1'; // Default to light roast color
+            coffeeDiv.style.backgroundColor = '#dbc1ac'; // Default to light roast color
     }
 
     coffeeDiv.style.border = '1px solid #38220f';
     coffeeDiv.style.margin = '0.5em';
-    coffeeDiv.style.width = '12em';
+    coffeeDiv.style.width = '9em';
+    coffeeDiv.style.borderRadius = '15%'
+    coffeeDiv.style.paddingTop = '.5em'
+    coffeeDiv.style.color= 'white'
 
     let typeParagraph = document.createElement('p');
-    typeParagraph.textContent = `Type: ${coffee.name}`;
+    typeParagraph.textContent = `${coffee.name}`;
     coffeeDiv.appendChild(typeParagraph);
 
     let roastParagraph = document.createElement('p');
-    roastParagraph.textContent = `Roast: ${coffee.roast}`;
+    roastParagraph.textContent = `${coffee.roast} Roast`;
     coffeeDiv.appendChild(roastParagraph);
 
     return coffeeDiv;
@@ -86,20 +89,20 @@ function addCoffee() {
 
 // Coffee data array
 const coffees = [
-    { id: 1, name: 'Light City', roast: 'light' },
-    { id: 2, name: 'Half City', roast: 'light' },
-    { id: 3, name: 'Cinnamon', roast: 'light' },
-    { id: 4, name: 'City', roast: 'medium' },
-    { id: 5, name: 'American', roast: 'medium' },
-    { id: 6, name: 'Breakfast', roast: 'medium' },
-    { id: 7, name: 'High', roast: 'dark' },
-    { id: 8, name: 'Continental', roast: 'dark' },
-    { id: 9, name: 'New Orleans', roast: 'dark' },
-    { id: 10, name: 'European', roast: 'dark' },
-    { id: 11, name: 'Espresso', roast: 'dark' },
-    { id: 12, name: 'Viennese', roast: 'dark' },
-    { id: 13, name: 'Italian', roast: 'dark' },
-    { id: 14, name: 'French', roast: 'dark' },
+    { id: 1, name: 'Light City', roast: 'Light' },
+    { id: 2, name: 'Half City', roast: 'Light' },
+    { id: 3, name: 'Cinnamon', roast: 'Light' },
+    { id: 4, name: 'City', roast: 'Medium' },
+    { id: 5, name: 'American', roast: 'Medium' },
+    { id: 6, name: 'Breakfast', roast: 'Medium' },
+    { id: 7, name: 'High', roast: 'Dark' },
+    { id: 8, name: 'Continental', roast: 'Dark' },
+    { id: 9, name: 'New Orleans', roast: 'Dark' },
+    { id: 10, name: 'European', roast: 'Dark' },
+    { id: 11, name: 'Espresso', roast: 'Dark' },
+    { id: 12, name: 'Viennese', roast: 'Dark' },
+    { id: 13, name: 'Italian', roast: 'Dark' },
+    { id: 14, name: 'French', roast: 'Dark' },
 ];
 
 // Initial render
