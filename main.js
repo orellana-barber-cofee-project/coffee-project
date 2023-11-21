@@ -53,7 +53,7 @@ function updateCoffees() {
 
     // Filter by selected roast
     if (selectedRoast !== 'all') {
-        filteredCoffees = filteredCoffees.filter(coffee => coffee.roast === selectedRoast);
+        filteredCoffees = filteredCoffees.filter(coffee => coffee.roast.toLowerCase() === selectedRoast);
     }
 
     // Filter by search term
